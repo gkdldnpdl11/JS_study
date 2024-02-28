@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>dialog : 대화 상자</title>
+		<script type="text/javascript">
+			// 자바스크립트에서는 3가지의 대화 상자가 있다
+			// 1. 경고창 : alert(), 확인창 : confirm(), 입력창 : prompt()
+			document.write("<h2>");
+			
+			// alert = 리턴값이 없다 (사용자에게 정보를 알리기만 한다, 인스턴스 개념)
+			// 현재 문서의 alert은 header에 위치하고 있으며, header에서 진행하지 않으면 body의 내용은 나오지 않는다
+			// let k1=alert('hi\nhello');
+			// alert은 리턴이 없기 때문에 undefined가 나옴, 리턴값이 없다
+			// document.write(`k1 = ${k1}`);
+			
+			// confirm()은 리턴값이 있다
+			// let k1=confirm("HELLO"); 		// 확인(true), 취소(false);
+			// document.write(`k1 = ${k1}`);
+			
+			// prompt는 사용자에게 정보를 입력받아 전달하는 역할을 한다
+			// 하지만 form 태그를 이용하는 경우가 많아서 활용도가 떨어진다
+			let k1=prompt("나이를 입력하세요", 34);
+			document.write(`k1 = ${k1}`);
+			
+			document.write("</h2>");
+		</script>
+	</head>
+	<body>
+		<h1>본문 내용</h1>
+	</body>
+</html>

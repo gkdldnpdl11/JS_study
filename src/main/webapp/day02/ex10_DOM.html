@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM - 부모, 형제, 자식 요소 선택하기</title>
+	</head>
+	<body>
+		<ul class="list">
+			<li class="item1">list1</li>
+			<li class="item2">list2</li>
+			<li class="item3">list3</li>
+			<li class="item4">list4</li>
+		</ul>
+		<script type="text/javascript">
+			// 자식요소를 하나씩 선택 : 부모선택 후 children;
+			const list = document.querySelector(".list");
+			const items = list.children;
+			console.log(items);
+			console.log(items[0].innerHTML);
+			console.log(items[1]);
+			console.log(items[2]);
+			console.log(items[3]);
+			console.log("---------------------------------");
+			
+			// 자식 요소 안의 content 전체 선택 (for문 사용하여 전체 선택함)
+			for (let k of items) {
+				console.log(k.innerHTML);
+			}
+			console.log("---------------------------------");
+			
+			const list2=document.getElementsByClassName("list");
+			console.log(list2);
+			
+			// 부모 선택하기 : 자식 선택 후 parentsElement
+			const item1= document.querySelector(".itme1");
+			console.log(item1.parentElement);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 함수 호출</title>
+		<script type="text/javascript">
+			function test(su) {
+				document.write(`<h2>함수호출연습 ${su} </h2>`);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>자바스크립트 함수 호출</h1>
+		방법 1 : <script type="text/javascript">test(1)</script>
+		방법 2 : <button onclick="test(2)">함수호출</button><br>
+		방법 3 : <div onclick="test(3)">함수 호출</div>			<!-- 버튼형식이 아닌 글자형식, 글자를 누르면 실행함 -->
+		방법 4 : <form action="#">
+							<input type="hidden" name="id" value="hong">
+							<input type="submit" value="보내기">
+							<input type="button" value="함수 호출" onclick="test(5)">
+						</form>
+	</body>
+</html>

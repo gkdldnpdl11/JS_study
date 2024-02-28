@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>function-2</title>
+		<script type="text/javascript">
+			document.write(`<p>ho</p>`);
+			// 이클립스에서는 안나오지만 브라우저 개발자모드(f12)에서는 오류 발생인것을 확인 가능
+			// 호이스팅으로 선언한 것보다 위에 있으므로 호출 불가능인 오류
+			// msg1();	
+		</script>
+		<script type="text/javascript">
+			// 호이스팅 : 선언한 내용을 제일 처음으로 올리는 특징
+			// 선언 함수가 같은 이름으로 호이스팅이 되어 처음 msg1() 선언함수의 내용은 
+			// 두번째 함수내용으로 덮어씌워져 있음, 그래서 호출이 불가하다
+			msg1();
+			function msg1() {
+				document.write(`<p>hi!!!!</p>`);
+			}
+			function msg1() {
+				document.write(`<p>hello!!!!</p>`);
+			}
+		</script>
+		<script type="text/javascript">
+			msg1();
+			// msg2();	= 오류(호이스팅 안됨)
+			let msg2=function(){
+				document.write(`<p>hello@@</p>`);
+			}
+			// 같은 익명함수 이지만 let을 사용하여 오류 발생
+			/* 
+				let msg2=function(){
+					document.write(`<p>hello@@</p>`);
+				}
+			*/
+			msg2();
+		</script>
+		<script type="text/javascript">
+			function msg3() {
+				document.write(`<p>hello####</p>`);
+			}
+			// var는 오류발생이 하지않음, 그러나 let을 사용하면 변수 재선언이 불가능하여 syntaxerror 발생함
+			/* 
+				let msg3 = function(){
+					document.write(`<p>hello$$$$</p>`);
+				}
+			*/
+			msg3();
+			// syntaxerror : 익명함수와 선언함수의 변수명을 같은 것을 사용하여 오류 발생, 변수명을 바꾸어야지 가능
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+				msg1();
+		</script>
+	</body>
+</html>

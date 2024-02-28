@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM - innerHTML</title>
+	</head>
+	<body>
+		<p id="msg1">Hello World</p>
+		<span id="msg2">Welcome JS</span>
+		<p id="msg3">서울시 마포구 신수동</p>
+		
+		<p id="res"></p>
+			<script type="text/javascript">
+				// HTML의 안에 있는 content만 출력
+				// let 변수 = 선택기(검색).innerHTML
+				// 선택기에 해당되는 요소의 content를 가져와서 변수에 저장한다
+				// getter
+				let str=document.querySelector("#msg1").innerHTML;
+				console.log(str);
+				// 아이디가 res인 요소에 아이디가 msg1인 요소의 content 삽입
+				document.querySelector("#res").innerHTML=str;
+				
+				// HTML 요소(태그의 시작부터 끝까지) 변경
+				// 내용 변경 : .innerHTML
+				// 속성 변경 : .속성
+				// CSS 변경 : .style.property
+				// setter 기능
+				document.querySelector("#msg1").innerHTML="<h2>KOREA SEOUL</h2>";
+				document.querySelector("#msg1").align="center";
+				document.querySelector("#msg1").style.color="tomato";
+				
+				document.getElementById("msg3").innerHTML="<h2>KOREA SEOUL</h2>";
+				document.getElementById("msg3").align="center";
+				document.getElementById("msg3").style.color="tomato";
+				
+			/* 	let str2=document.querySelector("#msg1").innerHTML;
+				console.log(str2); */
+			</script>
+	</body>
+</html>

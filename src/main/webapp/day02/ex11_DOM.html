@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM - 부모, 형제, 자식 요소 선택하기2</title>
+	</head>
+	<body>
+		<main>
+			<section>
+				<article>
+					<ul class="list">
+						<li class="item1">list1</li>
+						<li class="item2">list2</li>
+						<li class="item3">list3</li>
+						<li class="item4">list4</li>
+					</ul>
+				</article>
+			</section>
+		</main>
+		<script type="text/javascript">
+			// 제일 가까운 상위 부모 요소 선택 : closest()
+			const li = document.querySelector("li");
+			/* console.log(li.closest("main")); */
+			console.log(li.closest("article"));
+			
+			// 형제 요소 : previousElementSibling(); => 이전 요소;
+			// 형제 요소 : nextElementSibling(); => 이후 요소;
+			
+			const item3 = document.querySelector(".time3");
+			console.log(item3.previousSibling);
+		</script>
+	</body>
+</html>

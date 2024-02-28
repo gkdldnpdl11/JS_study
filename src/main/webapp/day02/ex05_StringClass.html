@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>String Class</title>
+		<script type="text/javascript">
+			let str1="Hello";
+			let str2=new String("Welcome");
+			
+			// 길이 : length
+			document.write(str1.length+"<hr>");
+			document.write(str2.length+"<hr>");
+			
+			// n번째 문자 추출 : charAt(n) * n은 index = 0부터 시작
+			document.write(str1.charAt(0)+"<hr>");	// H
+			document.write(str2.charAt(3)+"<hr>");	// c
+			
+			// 문자 연결자 : concat(str)
+			document.write(str1.concat(str2)+"<hr>");	// HelloWelcome
+			
+			// 해당 문자나 문자열의 위치값 : indexOf('문자나 문자열'), index=0부터 시작
+			// 															정규식 사용 못함, -1은 찾는 문자가 없다는 뜻
+			document.write(str1.indexOf('H')+"<hr>");		// 0
+			document.write(str2.indexOf('H')+"<hr>");		// -1
+			
+			// 해당 문자나 문자열의 위치값 : indexOf('문자나 문자열', 시작위치), index=0부터 시작
+			document.write(str2.indexOf('e')+"<hr>");		// 1
+			document.write(str2.indexOf('e',2)+"<hr>");	// 6
+			document.write(str2.indexOf('e',str2.indexOf('e')+1)+"<hr>");
+			
+			// 해당 문자나 문자열의 마지막 위치값 : lastIndexOf('문자나 문자열')
+			document.write(str2.lastIndexOf('e')+"<hr>");
+			
+			// 해당 문자나 문자열의 위치값 : search('문자나 문자열')
+			// 														정규식 사용 가능, 두번째 인자는 없다
+			document.write(str2.search('e')+"<hr>");
+			
+			// 원하는 문자열 추출 : slice, substring
+			// slice(begin, end);	substring(begin, end);
+			// end는 포함되지 않는다
+			str1="Apple, Banana, Kiwi";
+			document.write(str1.slice(7,13)+"<hr>");
+			document.write(str1.substring(0,5)+"<hr>");
+			
+			// 원하는 문자열 추출 : substr(begin, 개수);
+			document.write(str1.substr(7,6)+"<hr>");
+			
+			// 치환: replace(old, new)
+			document.write(str1.replace("Banana","Mango")+"<hr>");
+			// 치환하여도 원본은 변경되지 않는다
+			document.write(str1+"<hr>");
+			
+			// 대소문자 변환 : toUpperCase(), toLowerCase()
+			document.write(str1.toUpperCase()+"<hr>");
+			document.write(str1.toLowerCase()+"<hr>");
+			
+			// 앞뒤 공백 제거 : trim()
+			str1="apple,banana,kiwi";
+			str2="  apple,banana,kiwi  ";
+			document.write(str1.length+"<hr>");	// 17
+			document.write(str2.length+"<hr>");	// 17+4
+			document.write(str2.trim().length+"<hr>");	// 21-4
+			
+			// 문자열을 배열로 변환 : split('구분자')
+			// reg = 정규식을 뜻함
+			let str3= str1.split(',');
+			for ( let k in str3) {
+				document.write(str3[k]+" 팝니다 <hr>");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

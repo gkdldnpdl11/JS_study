@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>operator</title>
+		<script type="text/javascript">
+			let myInt=5;
+			let myFloat=6.667;
+			
+			// typeof : 변수의 데이터의 타입을 보는 예약어
+			// 정수와 실수의 타입은 number 이다
+			console.log(`myInt=${myInt}`);
+			console.log(typeof myInt);
+			
+			console.log(`myFloat=${myFloat}`);
+			console.log(typeof myFloat);
+			
+			// 실수일 때 고정된 소수점 자리수로 반올림 하려면 toFixed() 메소드 사용
+			let num1=1.7666548;
+			let res=num1.toFixed(3);		// num1의 데이터값의 소수점 3번째 자리까지 반올림과 동시에 반환한다
+			console.log(res);
+			
+			// 문자를 숫자로 변경 : Number("숫자형 문자") 사용, 자료형도 변경된다
+			let num2="75";
+			res = num2 += 5;
+			console.log(res+', ' + typeof res);
+			
+			res = Number(num2) + 5;
+			console.log(res+', ' + typeof res);
+			
+			res=Number("25")+5;
+			console.log(res+', ' + typeof res);
+			
+			// NaN(Not a Number) : 숫자 자리에 맞지 않는 데이터가 들어가 있다
+			res=Number("한국")+5;		
+			console.log(res+', ' + typeof res);
+			
+			let su1=7;
+			let su2=3;
+			document.write("<h2>");
+			document.write("<p>산술연산자(+, -, *, /, %, **)</p>");
+			document.write(su1+"+"+su2+"="+(su1+su2)+"<br>");
+			document.write(su1+"-"+su2+"="+(su1-su2)+"<br>");
+			document.write(su1+"*"+su2+"="+(su1*su2)+"<br>");
+			document.write(su1+"/"+su2+"="+(su1/su2).toFixed(1)+"<br>");		// 소수점 첫째자리까지 반올림
+			document.write(su1+"%"+su2+"="+(su1%su2)+"<br>");
+			document.write(su1+"**"+su2+"="+(su1**su2)+"<br>");
+			
+			document.write("<p>증감연산자(++, --)</p>");
+			// 숫자에 직접 증감 연산를 사용하지 못하고 변수를 이용해야 한다
+			// document.write(++3); => 오류
+			
+			let num3=4;
+			document.write(++num3+"<br>");	// 5
+			document.write(num3+++"<br>");	// 5
+			document.write(num3+"<br>");			// 6
+			
+			su1 = 7;
+			su2 =3;
+			document.write("<p>대입연산자(+=, -=, *=, /=)</p>");
+			
+			su1+=7;
+			document.write("su1 += 7 =>" + su1+"<br>");		// 7+7 = 14
+			su1-=7;
+			document.write("su1 -= 7 =>" + su1+"<br>");		// 14-7 = 7
+			su1*=7;
+			document.write("su1 *= 7 =>" + su1+"<br>");		// 7*7 = 49
+			su1/=7;
+			document.write("su1 /= 7 =>" + su1+"<br>");		// 49/7 = 7
+			
+			document.write("<p>비교연산자(>, >=, <, <=, ==, !=, ===, !==)</p>");
+			su1=7;
+			su2=3;
+			document.write(`${su1} >= ${su2} : ${su1>=su2} <br>`);
+			document.write(`${su1} <= ${su2} : ${su1<=su2} <br>`);
+			document.write(`${su1} == ${su2} : ${su1==su2} <br>`);
+			document.write(`${su1} != ${su2} : ${su1!=su2} <br>`);
+			
+			document.write("<p>비교연산자 주의 사항</p>");
+			su1=1000;
+			su2="1000";
+			// 숫자와 문자 비교할 때는 조심해야한다, 숫자와 숫자 비교는 상관없음
+			document.write(`${su1} == ${su2} : ${su1==su2} <br>`);							// true
+			document.write(`${su1} != ${su2} : ${su1!=su2} <br><br>`);					// false
+			
+			// 등호 3개짜리는 자료형과 데이터가 모두 일치 = true, 아닐땐 false
+			document.write(`${su1} === ${su2} : ${su1===su2} <br>`);					// false
+			document.write(`${su1} !== ${su2} : ${su1!==su2} <br><br>`);			// true
+			
+			// 0과 1은 false, true로 보기 때문이다(boolean형의 기본값은 0=false)
+			// 등호 3개짜리는 자료형과 데이터를 같이 보기 때문에 false 이다
+			su1 = true;
+			su2=1;
+			document.write(`${su1} == ${su2} : ${su1==su2} <br>`);							// true
+			document.write(`${su1} === ${su2} : ${su1===su2} <br><br>`);			// false
+			
+			su1 = false;
+			su2=0;
+			document.write(`${su1} == ${su2} : ${su1==su2} <br>`);							// true
+			document.write(`${su1} === ${su2} : ${su1===su2} <br><br>`);			// false
+			
+			document.write("<p>논리연산자(&&, ||, !)</p>");
+			su1=true;
+			su2=false;
+			document.write(`${su1} && ${su1} : ${su1&&su1} <br>`);					// t
+			document.write(`${su1} && ${su2} : ${su1&&su2} <br>`);					// f
+			document.write(`${su2} && ${su1} : ${su2&&su1} <br>`);					// f
+			document.write(`${su2} && ${su2} : ${su2&&su2} <br><hr>`);		// f
+
+			document.write(`${su1} || ${su1} : ${su1||su1} <br>`);					// t
+			document.write(`${su1} || ${su2} : ${su1||su2} <br>`);					// t
+			document.write(`${su2} || ${su1} : ${su2||su1} <br>`);					// t
+			document.write(`${su2} || ${su2} : ${su2||su2} <br><hr>`);		// f
+			
+			document.write("<p>삼항연산자</p>");
+			// 결과 = 조건식 ? 참 : 거짓;
+			// 자바에서는 결과= 참일때 결과, 거짓일때 결과가 모두 같은 자료형이여야 한다. 
+			// 그러나 자바스크립트에서는 자료형이 없기 때문에 상관없음
+			su1=75;
+			
+			// su1 이 60이상이면 합격, 아니면 불합격을 res에 저장
+			res=su1>= 60? "합격" : "불합격";
+			document.write(`res = ${res}`);
+			document.write("</h2>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

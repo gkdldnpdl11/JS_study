@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>async_await-EX</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fetchUser() {
+				const url = 'https://jsonplaceholder.typicode.com/users/1';
+				return fetch(url).then((response)=>{return response.json();});
+			}
+			
+			function fetchTodo() {
+				const url = 'https://jsonplaceholder.typicode.com/todos/1';
+				return fetch(url).then((response)=>{return response.json();});
+			}
+			
+			// 동기(순차적) 결과 : start > 1 > 2 > 3 > end
+			/* function logTodoTitle() {
+				console.log('1');
+				const user = fetchUser();
+				console.log('2');
+				if(user.id===1){
+					const todo = fetchTodo();
+					// console.log(todo.title);		한개만 찍을때
+					console.log(todo);
+				}
+				console.log('3');
+			}
+			console.log('start');
+			logTodoTitle();
+			console.log('end');
+			 */
+			 
+			// 비동기(순차적이지 않음, 병행처리) 결과 : start > 1 > end > 2 > 배열값(데이터) > 3
+			async function logTodoTitle() {
+				console.log('1');
+				const user = await fetchUser();
+				console.log('2');
+				if(user.id===1){
+					const todo = await fetchTodo();
+					console.log(todo);
+				}
+				console.log('3');
+			}
+			 
+			console.log('start');
+			logTodoTitle();
+			console.log('end');
+		</script>
+	</body>
+</html>
