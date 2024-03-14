@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			let ceoList=[
+				{name : "Larry page", age : 23, ceo:true},
+				{name : "Tim Cook", age : 40, ceo:false},
+				{name : "Elon Musk", age : 55, ceo:true}
+			];
+			// 콘솔창에 이름들만 출력하기
+			console.log("이름 : ", ceoList.map(k=>k.name));
+			
+			// 콘솔창에 나이가 40 이상인 사람들만 출력하기
+			console.log("나이가 40 이상인 사람들 : ", ceoList.filter(k => k.age>=40));	
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

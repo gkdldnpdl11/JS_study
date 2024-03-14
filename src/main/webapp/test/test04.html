@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>미디어쿼리</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			div{
+				width: 100%;
+				height: 100%;
+				background-color: black;
+			}
+			@media screen and (max-width: 1024px) {
+				div{width: 800px; height: 800px; background-color: red;}
+			}
+			@media screen and (max-width: 768px) {
+				div{width: 400px; height: 400px; background-color: blue;}
+			}
+			@media screen and (max-width: 320px) {
+				div{width: 200px; height: 200px; background-color: green;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

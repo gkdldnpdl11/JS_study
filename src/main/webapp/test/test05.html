@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#wrapper{
+				display: grid;
+				width: 600px;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(5, 100px);
+				grid-gap: 0.5rem;
+			}
+			.box{
+				background-color: skyblue;
+				padding: 10px;
+				border: 1px solid black;
+			}
+			.box1{
+				grid-column: 1/4;
+			}
+			.box2{
+				grid-row: 2/5;
+			}
+			.box3{
+				grid-column: 2/3;
+				grid-row: 2/5;
+			}
+			.box4{
+				grid-row: 2/3;
+			}
+			.box5{
+				grid-row: 3/4;
+			}
+			.box6{
+				grid-row: 4/5;
+			}
+			.box7{
+				grid-column: 1/4;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="box box1">header</div>
+			<div class="box box2">menu</div>
+			<div class="box box3">main</div>
+			<div class="box box4">top</div>
+			<div class="box box5">aside</div>
+			<div class="box box6">bottom</div>
+			<div class="box box7">footer</div>
+		</div>
+	</body>
+</html>
